@@ -3,26 +3,19 @@ using namespace std;
 
 int main()
 {
-    // reversing a number
-    int number, reversedNumber = 0;
-    cout << "Number: ";
-    // cin >> number;
+    // guess the forgotten pin. pinGuess represents the pin the user guesses.
+    int usersPin = 1234, pinGuess, errorCounter = 0;
 
-    number = 246810;
+    do {
+        cout << "PIN: ";
+        cin >> pinGuess;
+        if (pinGuess != usersPin)
+            errorCounter++;
+    } while (errorCounter < 3 && pinGuess != usersPin);
 
-    cout << number << "  ";
-
-    while (number !=0) {
-        reversedNumber *= 10;
-
-        // now take the last digit of the original number
-        int lastDigit = number % 10;        // mod 10
-        reversedNumber += lastDigit;
-
-        // remove the last digit from the original number
-        number /= 10;
-    }
-
-    cout << "Reversed number: " << reversedNumber;
+    if (errorCounter < 3)
+        cout << "You entered your PIN correctly. Loading...";
+    else
+        cout << "Too many attempts. Your account is locked";
 
 }

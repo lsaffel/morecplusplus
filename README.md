@@ -6,3 +6,5 @@
    10 times the reversed number in a while loop.  
    Note that if the original number ends in 0, then  
    that digit is left off of the reversed number.
+3. Do while loop.  
+   Allowing a max of 3 PIN guesses before locking.
